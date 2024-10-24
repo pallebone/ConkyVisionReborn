@@ -16,6 +16,7 @@ USAGE:
 6) Edit the forecast.conky file. At a minimum you need to put your API key in template6 and your cities latitude and longitude into template7 and template5 which you can find on openweathermap.
 7) To run conky you can create a script that runs on login. Here is an example for Gnome:
 
+```
 Script example:
 #!/bin/sh
 export DISPLAY=:0
@@ -23,13 +24,15 @@ killall conky
 sleep 15
 cd /home/aragorn/.conky
 conky -d -c /home/aragorn/.conky/clock.conkyrc
-conky -d -c /home/aragorn/.conky/forecast.conky
+conky -d -c /home/aragorn/.conky/forecast.conky'
+```
 
 Save this as conkyrun.sh and +x
 
 Gnome autostart example:
 under ~/.config/autostart create a file eg: conky2.desktop - example autostart file:
 
+```
 [Desktop Entry]
 Type=Application
 Exec=sh -c "/Scripts/conkyrun.sh"
@@ -42,9 +45,10 @@ Name=conky2
 Comment=A comment
 X-MATE-Autostart-Delay=4
 X-GNOME-Autostart-Delay=4
+```
 
 This would cause the clock and weather to run on login. Note, they take about a minute to sort out all the icons and display them so wait 60 seconds.
 
 To just run the conky from a terminal you can run a command like this:
-cd ~/.conky/ && conky -d -c /home/aragorn/.conky/clock.conkyrc && conky -d -c /home/aragorn/.conky/forecast.conky
+```cd ~/.conky/ && conky -d -c /home/aragorn/.conky/clock.conkyrc && conky -d -c /home/aragorn/.conky/forecast.conky```
 then wait 60 seconds for it to all load up.
