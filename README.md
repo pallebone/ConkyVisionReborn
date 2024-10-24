@@ -1,3 +1,5 @@
+Download : https://github.com/pallebone/ConkyVisionReborn/raw/refs/heads/main/ConkyVisionReborn.tar.gz
+
 # ConkyVisionReborn
 Fixed Conky Vision for API 3.0 of openweathermap
 
