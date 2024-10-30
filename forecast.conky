@@ -38,7 +38,7 @@
 -------------------------------------
 --  API Key
 -------------------------------------
-template6="aaaaaaaaaaInsertAPIKeyaaaaaaaaa",
+template6="9e23e5f02819d60504b3cda9522e3c9a",
 
 
 -------------------------------------
@@ -67,21 +67,21 @@ ${execi 300 l=${template9}; l=${l%%_*}; curl -s "api.openweathermap.org/data/3.0
 ${alignc}${font Poiret One:size=32}${time %A, %B %e}
 #current temperature then max temps each day
 ${font Poiret One:size=16}
-${goto 40}${execi 300 jq -r .current.temp ~/.conky/json/weather.json | awk '{printf ("%.0f\n",$1)}' # round num}°${goto 152}${execi 300 jq .daily[1].temp.max ~/.conky/json/weather.json  | awk '{printf ("%.0f\n",$1)}' # round num}°${goto 288}${voffset -2}${execi 300 jq .daily[2].temp.max ~/.conky/json/weather.json | awk '{printf ("%.0f\n",$1)}' # round num}°${goto 418}${execi 300 jq .daily[3].temp.max ~/.conky/json/weather.json | awk '{printf ("%.0f\n",$1)}' # round num}°${goto 548}${execi 300 jq .daily[4].temp.max ~/.conky/json/weather.json | awk '{printf ("%.0f\n",$1)}' # round num}°
+${goto 38}${execi 300 jq -r .current.temp ~/.conky/json/weather.json | awk '{printf ("%.0f\n",$1)}' # round num}°${goto 168}${execi 300 jq .daily[1].temp.max ~/.conky/json/weather.json  | awk '{printf ("%.0f\n",$1)}' # round num}°${goto 298}${voffset -2}${execi 300 jq .daily[2].temp.max ~/.conky/json/weather.json | awk '{printf ("%.0f\n",$1)}' # round num}°${goto 428}${execi 300 jq .daily[3].temp.max ~/.conky/json/weather.json | awk '{printf ("%.0f\n",$1)}' # round num}°${goto 558}${execi 300 jq .daily[4].temp.max ~/.conky/json/weather.json | awk '{printf ("%.0f\n",$1)}' # round num}°
 ${voffset 32}
 #min temps each day skipping first day
-${goto 188}${execi 300 jq .daily[1].temp.min ~/.conky/json/weather.json | awk '{printf ("%.0f\n",$1)}' # round num}°${goto 324}${execi 300 jq .daily[2].temp.min ~/.conky/json/weather.json | awk '{printf ("%.0f\n",$1)}' # round num}°${goto 454}${execi 300 jq .daily[3].temp.min ~/.conky/json/weather.json | awk '{printf ("%.0f\n",$1)}' # round num}°${goto 584}${execi 300 jq .daily[4].temp.min ~/.conky/json/weather.json | awk '{printf ("%.0f\n",$1)}' # round num}°
+${goto 204}${execi 300 jq .daily[1].temp.min ~/.conky/json/weather.json | awk '{printf ("%.0f\n",$1)}' # round num}°${goto 334}${execi 300 jq .daily[2].temp.min ~/.conky/json/weather.json | awk '{printf ("%.0f\n",$1)}' # round num}°${goto 464}${execi 300 jq .daily[3].temp.min ~/.conky/json/weather.json | awk '{printf ("%.0f\n",$1)}' # round num}°${goto 594}${execi 300 jq .daily[4].temp.min ~/.conky/json/weather.json | awk '{printf ("%.0f\n",$1)}' # round num}°
 \
-${execi 300 cp -f ~/.conky/images/$(jq -r .current.weather[].id ~/.conky/json/weather.json).png ~/.conky/images/weather-1.png}${lua conky_image ./images/weather-1.png 20 62 38 38}
-${execi 300 cp -f ~/.conky/images/$(jq .daily[1].weather[].id ~/.conky/json/weather.json).png ~/.conky/images/forecast-1.png}${lua conky_image ./images/forecast-1.png 70 62 38 38}\
-${execi 300 cp -f ~/.conky/images/$(jq .daily[2].weather[].id ~/.conky/json/weather.json).png ~/.conky/images/forecast-2.png}${lua conky_image ./images/forecast-2.png 132 62 38 38}\
-${execi 300 cp -f ~/.conky/images/$(jq .daily[3].weather[].id ~/.conky/json/weather.json).png ~/.conky/images/forecast-3.png}${lua conky_image ./images/forecast-3.png 192 62 38 38}\
-${execi 300 cp -f ~/.conky/images/$(jq .daily[4].weather[].id ~/.conky/json/weather.json).png ~/.conky/images/forecast-4.png}${lua conky_image ./images/forecast-4.png 252 62 38 38}\
+${execi 300 cp -f ~/.conky/images/$(jq -r .current.weather[].id ~/.conky/json/weather.json).png ~/.conky/images/weather-1.png}${lua conky_image ./images/weather-1.png 22 62 38 38}
+${execi 300 cp -f ~/.conky/images/$(jq .daily[1].weather[].id ~/.conky/json/weather.json).png ~/.conky/images/forecast-1.png}${lua conky_image ./images/forecast-1.png 82 62 38 38}\
+${execi 300 cp -f ~/.conky/images/$(jq .daily[2].weather[].id ~/.conky/json/weather.json).png ~/.conky/images/forecast-2.png}${lua conky_image ./images/forecast-2.png 142 62 38 38}\
+${execi 300 cp -f ~/.conky/images/$(jq .daily[3].weather[].id ~/.conky/json/weather.json).png ~/.conky/images/forecast-3.png}${lua conky_image ./images/forecast-3.png 202 62 38 38}\
+${execi 300 cp -f ~/.conky/images/$(jq .daily[4].weather[].id ~/.conky/json/weather.json).png ~/.conky/images/forecast-4.png}${lua conky_image ./images/forecast-4.png 262 62 38 38}\
 \
 ${voffset -2}${color0}\
-${goto 40}${execi 300 LANG=${template9} LC_TIME=${template9} date +%^a}\
-${goto 156}${execi 300 LANG=${template9} LC_TIME=${template9} date -d +1day +%^a}\
-${goto 304}${execi 300 LANG=${template9} LC_TIME=${template9} date -d +2days +%^a}\
-${goto 434}${execi 300 LANG=${template9} LC_TIME=${template9} date -d +3days +%^a}\
-${goto 564}${execi 300 LANG=${template9} LC_TIME=${template9} date -d +4days +%^a}\
+${goto 54}${execi 300 LANG=${template9} LC_TIME=${template9} date +%^a}\
+${goto 184}${execi 300 LANG=${template9} LC_TIME=${template9} date -d +1day +%^a}\
+${goto 314}${execi 300 LANG=${template9} LC_TIME=${template9} date -d +2days +%^a}\
+${goto 444}${execi 300 LANG=${template9} LC_TIME=${template9} date -d +3days +%^a}\
+${goto 574}${execi 300 LANG=${template9} LC_TIME=${template9} date -d +4days +%^a}\
 ]];
