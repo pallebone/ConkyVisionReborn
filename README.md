@@ -1,5 +1,7 @@
 Download : https://github.com/pallebone/ConkyVisionReborn/raw/refs/heads/main/ConkyVisionReborn.tar.gz
 
+Edit on 30/10/2024 - Fixed alignment of weather icons and text. Also included 2 clock options with second hands (red second hand and white second hand) and digital clock to play around with if you prefer that. Default is still just hour and minute hands as per the screenshot, but you can further customise if you prefer.
+
 # ConkyVisionReborn
 Fixed Conky Vision for API 3.0 of openweathermap
 
