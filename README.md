@@ -16,7 +16,7 @@ USAGE:
 2) Set Calls per day on the account max to be 990 so you do not get billed if you use more than 1000 calls in a day (under billing plans).
 3) Download the zip and extract it to /home/username/.conky (~/.conky)
 4) there should be these files: /images folder with the images, /json folder with the captured weather data, clock.conkyrc, clock_rings.lua, ConkySymbols.ttf, forecast.conky, PoiretOne-Regular.ttf, transparent-image.lua.
-5) The clock and weather data part of conky is 2 seperate conky files so you can use your own clock if you want (eg: digital) or not at all.
+5) The clock and weather data part of conky is 2 separate conky files so you can use your own clock if you want (eg: digital) or not at all.
 6) Edit the forecast.conky file. At a minimum you need to put your API key in template6 and your cities latitude and longitude into template7 and template5 which you can find on openweathermap.
 7) To run conky you can create a script that runs on login. Here is an example for Gnome:
 
